@@ -1,0 +1,49 @@
+.row {
+    margin-left: 20px;
+}
+
+.row__title {
+    color: white;
+}
+
+.row__posters {
+    /* puts posters into flexbox container */
+    display: flex;
+    /* create scroll bar for individual rows */
+    overflow-y: hidden;
+    overflow-x: scroll;
+    /* prevents cropping on hover*/
+    padding: 20px;
+}
+
+/* removes visible scroll bar but keeps functionality */
+.row__posters::-webkit-scrollbar {
+    display: none;
+}
+
+.row__poster {
+    /* increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio*/
+    object-fit: contain;
+    /* curved - edges */
+    border-radius: 4px;
+    width: 100%;
+    /* reduces height to fit into rows*/
+    max-height: 100px;
+    /* creat space between posters */
+    margin-right: 10px;
+    /* if poster changes size it will do so slowly, small delay */
+    transition: transform 450ms; 
+}
+
+/* add hover animation to grown to 1.08x the size */
+.row__poster:hover {
+    transform: scale(1.08);
+}
+
+.row__posterLarge {
+    max-height: 250px;
+}
+
+.row__posterLarge:hover {
+    transform: scale(1.09);
+}
